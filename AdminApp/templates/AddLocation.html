@@ -1,0 +1,41 @@
+{% extends 'AdminIndex.html'%}
+
+{% block content %}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Add New Locations </h4>
+        
+        <form class="forms-sample" action="{% url 'LocationData' %}"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="Street">Street</label>
+            <input type="text" class="form-control" id="Street" name="street" placeholder="Street ">
+          </div>
+          <div class="form-group">
+            <label for="City">City</label>
+            <input type="text" class="form-control" id="City" name="city" placeholder="City ">
+          </div>
+          <div class="form-group">
+            <label for="District">District</label>
+            <input type="text" class="form-control" id="District" name="district" placeholder="District ">
+          </div>          
+          <div class="form-group">
+            <label> Add Image</label>
+            <input type="file" name="image">
+        </div>
+
+          <div class="form-group">
+            <label for="State">State</label>
+            <input type="text" class="form-control" id="State"name="state" placeholder="State">
+          </div>
+          
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button class="btn btn-dark">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock%}

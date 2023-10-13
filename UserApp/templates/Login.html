@@ -1,0 +1,42 @@
+{% extends 'UserIndex.html' %}
+
+{% block content %}
+
+<br><br><br><br>
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Login Now..!</h2>
+                    <span></span>
+                </div>
+                <form id="contact" action="{% url 'UserLogin' %}" method="post">
+                  {% csrf_token %}
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <fieldset>
+                          <input name="name" type="text" id="name" placeholder="Your name" required="">
+                        </fieldset>
+                      </div>                     
+                     <br><br>                     
+                      <div class="col-lg-12">
+                        <fieldset>
+                            <input name="password" type="password" id="message" placeholder="Type Your Password" required="">
+                        </fieldset>
+                      </div>
+                      <br><br>
+                      <div class="col-lg-3">
+                        <input type="submit" value="Login"class="fa fa-paper-plane" style="background-color: rgb(35, 35, 116);">
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        
+    </div>
+  
+</div>
+
+{% endblock %}

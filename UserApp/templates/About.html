@@ -1,0 +1,72 @@
+{% extends 'UserIndex.html' %}
+{% load static %}
+{% block content %}
+<div class="page-heading about-page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>About Our Website</h2>
+                    <span>Awesome, clean &amp; creative </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-image">
+                    <img src="{% static 'image4.jpg' %}" alt=""  height="370">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <h4>About Us &amp; Our Services</h4>
+                    <span>
+                        Picking the right venue is a not a cakewalk & we know it! We have listed the different types of wedding venues to assist you in picking the right one wisely!
+                        No two special event venues are exactly alike. Venues vary greatly in size, style, service, and the types of events they can accommodate. Certain types of venues offer overnight accommodations, for example, while others focus solely on the event space. While some venues are flexible, with the ability to accommodate a variety of event styles, others are designed to accommodate a specific event niche, such as weddings or government events.
+
+                        In this post, we explore the types of venues everyone in the hospitality and event industries should know about. Whether you’re a planner looking for a modern meeting space for a tech-heavy corporate presentation, a hotelier looking to expand your event offerings and scope out the competition, or anyone in between, we hope you'll find inspiration from this guide. </span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="our-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Our Services</h2>
+                    <span>Details to details is what makes venues different from the other venues.</span>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Antique or vintage store</h4>
+                    <p>If you and your spouse-to-be share a love of vintage decor or a kitschy retro environment, consider holding your wedding in a vintage shop or antique warehouse. Reach out to your regular haunts when you go antiquing to see if they’ll host, and make it clear you will be respectful of their merchandise and have full-coverage wedding insurance.</p>
+                    <img src="{% static 'image2.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Beach or waterfront</h4>
+                    <p>Whether you overlook an ocean, lake, or river, there’s something undeniably romantic and peaceful about a wedding venue near a body of water. For the ceremony, many waterside venues offer dedicated setups with arches or gazebos you can decorate to your liking. The reception space may be a pavilion, a large tent, an indoor space with glass French doors, or an outdoor platform beneath the stars.  </p>
+                    <img src="{% static 'image3.jpg' %}" alt="" height="210">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Community Centers</h4>
+                    <p>Local community centers, or sites like the Lions Club, Kiwanis Club, or Junior League, offer affordable spaces for DIY weddings. Get clear on any decor limitations and their offerings because this will vary widely between spaces. Many clubs will have advanced A/V equipment and fully equipped kitchens, where others offer ample space but few amenities.  .</p>
+                    <img src="{% static 'image5.jpg' %}" alt="" height="240">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

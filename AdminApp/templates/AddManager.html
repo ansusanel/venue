@@ -1,0 +1,46 @@
+{% extends 'AdminIndex.html'%}
+
+{% block content %}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Add Manager  </h4>
+        
+        <form class="forms-sample"action="{% url 'Managerdata' %}" method="post" >
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="StreetName">Venu Name</label>
+                <select name="VenuName" > 
+                    <option value="0">--Select Venu--</option>
+                    {% for i in data2 %}
+                    <option  value="{{ i.VenuName }}">{{ i.VenuName}}</option>
+                    {% endfor %}
+                  </select>
+              </div>
+
+          <div class="form-group">
+            <label for="ManagerName">Manager Name</label>
+            <input type="text" class="form-control" id="ManagerName" name="ManagerName" placeholder="ManagerName ">
+          </div>
+
+          <div class="form-group">
+            <label for="ManagerPlace">Manager Place</label>
+            <input type="text" class="form-control" id="ManagerPlace" name="ManagerPlace"placeholder="ManagerPlace ">
+          </div>
+
+          <div class="form-group">
+            <label for="ManagerNumber">Manager Number</label>
+            <input type="text" class="form-control" id="ManagerNumber" name="ManagerNumber" placeholder="ManagerNumber ">
+          </div>        
+          
+          
+
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button class="btn btn-dark">Cancel</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock%}

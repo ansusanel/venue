@@ -1,0 +1,79 @@
+{% extends 'UserIndex.html' %}
+
+{% block content %}
+
+<br><br><br><br>
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Say Hello. Book it Now !</h2>
+                    <span>Details to details is what makes Venue different from the other Venues.</span>
+                </div>
+            
+                <div class="row"> 
+                  {% for i in data2 %}   
+                              
+                    <div class="col-lg-12" style="margin-top: 10px; margin-left: 100px;">
+                        <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap" width="200px" height="200px">
+                            <div class="card-body">
+        
+                                <h5 class="card-title">Street Name: {{i.street}}</h5> 
+                                <h5 class="card-title">Venu  Name: {{i.VenuName}}</h5> 
+                                <h5 class="card-title">Venu Type: {{i.VenuType}}</h5>                                  
+                                <h5 class="card-title">User name: {{request.session.username_u}}</h5>  
+                                <h5 class="card-title">User number: {{request.session.u_number}}</h5>  
+                                                            
+                                </div>
+                 
+                 
+                <form id="contact" action="{% url 'Bookdata' id=i.id %}" method="post">
+                  {% csrf_token %}
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <fieldset>
+                            <input name="function" type="text" id="function" placeholder="Type Your Function Type" required="">
+                        </fieldset>
+                      </div>                         
+                      <div class="col-lg-6">
+                        <fieldset>
+                            <input name="date" type="date" id="date" placeholder="Choose the date" required="">
+                        </fieldset>
+                      </div>
+                      <br><br>   
+                      <div class="col-lg-6">
+                        <fieldset>
+                            <input name="starttime" type="time" id="starttime" placeholder="Type Your Start Time" required="">
+                        </fieldset>
+                      </div>            
+                      <div class="col-lg-6">
+                        <fieldset>
+                            <input name="endtime" type="time" id="endtime" placeholder="Type Your End Time" required="">
+                        </fieldset>
+                      </div>   
+                      <br><br>             
+                      <div class="col-lg-6">
+                        <input type="submit" value="Submit"class="fa fa-paper-plane" style="background-color:rgb(35, 35, 100);">
+                      </div>
+                      <div class="col-lg-6">
+                        
+                      </div>
+                      <div class="col-lg-6">
+                        <fieldset>
+                          <input name="Venu_id" type="hidden" value="{{i.id}}">
+                        </fieldset>
+                      </div>
+                    
+                    </div>
+                  
+                    </div>
+                  {% endfor %}
+            </div>
+        </div>
+    </div>
+  </form><p style="color: rgb(13, 122, 71);font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: x-large;">{{msgs}}</p>
+</div>
+
+{% endblock %}

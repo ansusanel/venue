@@ -1,0 +1,39 @@
+
+{% extends 'UserIndex.html' %}
+
+{% block content %}
+{% load static %}
+<br><br><br><br><br><br><br><br>
+    <div>
+        <center>
+            <img src="{% static 'reserve.png' %}" width="1300" height="200" style="border: 5px double black;" >
+        </center>
+    </div>
+    
+    <div>
+    <h4 class="card-header">  Venue </h4>
+    </div>
+
+
+    
+        <div class="row"> 
+            {% for i in data2 %}                    
+            <div class="col-lg-4" style="margin-top: 10px; margin-left: 100px;">
+                <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap" width="200px" height="200px">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Street Name: {{i.street}}</h5> 
+                        <h5 class="card-title">Venu  Name: {{i.VenuName}}</h5> 
+                        <h5 class="card-title">Venu Type: {{i.VenuType}}</h5> 
+                        <h5 class="card-title">Venu Owner: {{i.VenuOwner}}</h5> 
+                        <h5 class="card-title">Venu Number: {{i.VenuNumber}}</h5>
+                        <h5 class="card-title">Venu Description: {{i.VenuDescription}}</h5>  
+                         <br><br>  
+                         <a href="{% url 'BookVenues' id=i.id %}" class="btn btn-primary">Book Now</a>  
+                        </div>
+            </div>
+                
+            {% endfor %}
+        </div>
+
+{% endblock %}

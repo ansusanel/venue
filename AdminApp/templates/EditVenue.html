@@ -1,0 +1,61 @@
+{% extends 'AdminIndex.html'%}
+
+{% block content %}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Edit Venues </h4>
+        {% for i in data2 %}
+        <form class="forms-sample"action="{% url 'UpdateVenue' id=i.id %}" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="StreetName">Street Name</label>
+                <select name="street" > 
+                    <option value="0">--Select Street--</option>
+                    {% for i in data1 %}
+                    <option  value="{{ i.street }}">{{ i.street}}</option>
+                    {% endfor %}
+                  </select>
+              </div>
+
+          <div class="form-group">
+            <label for="VenuName">Venu Name</label>
+            <input type="text" class="form-control" id="VenuName" name="VenuName" value="{{i.VenuName}}">
+          </div>
+
+          <div class="form-group">
+            <label for="VenuType">Venu Type</label>
+            <input type="text" class="form-control" id="VenuType" name="VenuType" value="{{i.VenuType}}">
+          </div>
+
+          <div class="form-group">
+            <label for="VenuOwner">Venu Owner</label>
+            <input type="text" class="form-control" id="VenuOwner" name="VenuOwner" value="{{i.VenuOwner}}">
+          </div>   
+
+          <div class="form-group">
+            <label for="VenuNumber">Venu Number</label>
+            <input type="text" class="form-control" id="VenuNumber" name="VenuNumber" value="{{i.VenuNumber}}">
+          </div>        
+          
+          <div class="form-group">
+            <label for="VenuDescription">Venu Description</label>
+            <input type="text" class="form-control" id="VenuDescription"name="VenuDescription" value="{{i.VenuDescription}}">
+          </div>
+
+           
+            <div class="form-group">
+                <label> Add Image</label>
+                <input type="file" name="image" value="{{i.image}}">
+            </div>
+
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button class="btn btn-dark">Cancel</button>
+          {% endfor %}
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock%}

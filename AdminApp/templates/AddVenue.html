@@ -1,0 +1,58 @@
+{% extends 'AdminIndex.html'%}
+
+{% block content %}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Add New Venues </h4>
+        
+        <form class="forms-sample"action="{% url 'VenueData' %}" method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="StreetName">Street Name</label>
+                <select name="street" > 
+                    <option value="0">--Select Street--</option>
+                    {% for i in data1 %}
+                    <option  value="{{ i.street }}">{{ i.street}}</option>
+                    {% endfor %}
+                  </select>
+              </div>
+
+          <div class="form-group">
+            <label for="VenuName">Venu Name</label>
+            <input type="text" class="form-control" id="VenuName" name="VenuName" placeholder="VenuName ">
+          </div>
+
+          <div class="form-group">
+            <label for="VenuType">Venu Type</label>
+            <input type="text" class="form-control" id="VenuType" name="VenuType"placeholder="VenuType ">
+          </div>
+
+          <div class="form-group">
+            <label for="VenuOwner">Venu Owner</label>
+            <input type="text" class="form-control" id="VenuOwner" name="VenuOwner" placeholder="VenuOwner ">
+          </div>          
+          <div class="form-group">
+            <label for="VenuNumber">Venu Number</label>
+            <input type="text" class="form-control" id="VenuNumber" name="VenuNumber" placeholder="VenuNumber ">
+          </div>   
+          <div class="form-group">
+            <label for="VenuDescription">Venu Description</label>
+            <input type="text" class="form-control" id="VenuDescription"name="VenuDescription" placeholder="VenuDescription">
+          </div>
+
+           
+            <div class="form-group">
+                <label> Add Image</label>
+                <input type="file" name="image">
+            </div>
+
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button class="btn btn-dark">Cancel</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock%}

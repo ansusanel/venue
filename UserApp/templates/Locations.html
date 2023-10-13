@@ -1,0 +1,47 @@
+{% extends 'UserIndex.html' %}
+
+{% block content %}
+{% load static %}
+<div class="page-heading" id="top">
+    
+        <div class="row">
+            <div class="col-lg-12">
+                
+                    <img src="{% static 'booking.jpg' %}" alt="" width="1400" height="70">
+                    
+           
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="row">
+    {% for i in data1 %}   
+      <div class="col-lg-4" style="margin-top: 10px;">
+          <img class="card-img-top" src="{{ i.image.url }}" alt="Card image cap" width="200px" height="200px">
+          <div class="down-content">
+            <h5 class="card-title">{{i.street}}</h5>    
+            <span> 
+              <a href="{% url 'OneLocation' i.street %}" class="btn btn-primary">View More</a>
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            <i class="fa fa-star" style="color:darkgoldenrod"></i>
+            <i class="fa fa-star" style="color:darkgoldenrod"></i>
+            <i class="fa fa-star" style="color:darkgoldenrod"></i>
+            </span>              
+            
+            
+        </div>    
+          
+          
+         
+      </div>       
+      {% endfor %}
+    </div>   
+  </div>  
+
+
+
+
+  
+</section>
+
+{% endblock %}
